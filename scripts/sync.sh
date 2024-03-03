@@ -9,7 +9,7 @@ SETTINGS_TARGET_PATH="$CURRENT_SCRIPT_PATH/../settings"
 if [ $TARGET = "zshrc" ] && [ $MODE = "save"  ]; then
     cp ~/.zshrc "$SETTINGS_TARGET_PATH/.zshrc";
     exit 0;
-elif [ $TARGET = "zsrhc" ] && [ $MODE = "load" ]; then
+elif [ $TARGET = "zshrc" ] && [ $MODE = "load" ]; then
     cp "$SETTINGS_TARGET_PATH/.zshrc" ~/.zshrc;
     exit 0;
 else

@@ -19,6 +19,7 @@ plugins=(git)
 # appearance
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+precmd() { echo; }
 
 # node
 export NVM_DIR="$HOME/.nvm"
@@ -26,9 +27,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 export PATH="$(yarn global bin):$PATH"
-
-# aws
-export MFA_STS_DURATION=129600
 
 # pip
 export PATH=$PATH:~/Library/Python/3.8/bin

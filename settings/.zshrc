@@ -11,7 +11,6 @@ alias cdw="cd ~/code/wafflestudio"
 alias cdwsew="cd ~/code/wafflestudio/snutt-ev-web"
 alias cdwsw="cd ~/code/wafflestudio/snutt-webclient"
 alias cdwsw2="cd ~/code/wafflestudio/snutt-webclient-v2"
-alias cds="cd ~/code/suhyunmin428"
 
 # git
 plugins=(git)

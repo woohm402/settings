@@ -3,10 +3,10 @@ alias ppc="pwd | xargs echo 'cd' | pbcopy"
 alias cdc="cd ~/code"
 alias cdm="cd ~/code/mathpresso"
 alias cdmqf="cd ~/code/mathpresso/qanda-frontend"
-alias cdmacaw="cd /Users/woohyunmin/code/mathpresso/qanda-frontend/services/adaptivecontent-admin-web"
-alias cdmqds="cd /Users/woohyunmin/code/mathpresso/qanda-frontend/libraries/qanda-design-system"
-alias cdmqauw="cd /Users/woohyunmin/code/mathpresso/qanda-frontend/services/qanda-ai-user-web"
-alias cdmlw="cd /Users/woohyunmin/code/mathpresso/qanda-frontend/services/lms-web"
+alias cdmacaw="cd ~/code/mathpresso/qanda-frontend/services/adaptivecontent-admin-web"
+alias cdmqds="cd ~/code/mathpresso/qanda-frontend/libraries/qanda-design-system"
+alias cdmqauw="cd ~/code/mathpresso/qanda-frontend/services/qanda-ai-user-web"
+alias cdmlw="cd ~/code/mathpresso/qanda-frontend/services/lms-web"
 alias cdw="cd ~/code/wafflestudio"
 alias cdwsew="cd ~/code/wafflestudio/snutt-ev-web"
 alias cdwsw="cd ~/code/wafflestudio/snutt-webclient"
@@ -31,8 +31,8 @@ export PATH="$(yarn global bin):$PATH"
 export PATH=$PATH:~/Library/Python/3.8/bin
 
 # gcp
-if [ -f '/Users/woohyunmin/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/woohyunmin/.google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/Users/woohyunmin/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/woohyunmin/.google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '~/.google-cloud-sdk/path.zsh.inc' ]; then . '~/.google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '~/.google-cloud-sdk/completion.zsh.inc' ]; then . '~/.google-cloud-sdk/completion.zsh.inc'; fi
 
 eval $(thefuck --alias)
 

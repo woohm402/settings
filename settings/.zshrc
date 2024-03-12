@@ -1,15 +1,15 @@
 # alias
 alias ppc="pwd | xargs echo 'cd' | pbcopy"
 alias cdc="cd ~/code"
+alias gswr="git switch -c woohm402/$(date +%Y%m%d%H%M%S)"
+
 alias cdm="cd ~/code/mathpresso"
 alias cdmqf="cd ~/code/mathpresso/qanda-frontend"
-alias cdmacaw="cd ~/code/mathpresso/qanda-frontend/services/adaptivecontent-admin-web"
-alias cdmqds="cd ~/code/mathpresso/qanda-frontend/libraries/qanda-design-system"
-alias cdmqauw="cd ~/code/mathpresso/qanda-frontend/services/qanda-ai-user-web"
 alias cdmlw="cd ~/code/mathpresso/qanda-frontend/services/lms-web"
+alias cdmmw="cd ~/code/mathpresso/qanda-frontend/services/mathcoach-web"
+
 alias cdw="cd ~/code/wafflestudio"
 alias cdwsew="cd ~/code/wafflestudio/snutt-ev-web"
-alias cdwsw="cd ~/code/wafflestudio/snutt-webclient"
 alias cdwsw2="cd ~/code/wafflestudio/snutt-webclient-v2"
 
 # git

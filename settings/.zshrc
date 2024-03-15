@@ -1,7 +1,6 @@
 # alias
 alias ppc="pwd | xargs echo 'cd' | pbcopy"
 alias cdc="cd ~/code"
-alias gswr="git switch -c woohm402/$(date +%Y%m%d%H%M%S)"
 
 alias cdm="cd ~/code/mathpresso"
 alias cdmqf="cd ~/code/mathpresso/qanda-frontend"
@@ -14,6 +13,9 @@ alias cdwsw2="cd ~/code/wafflestudio/snutt-webclient-v2"
 
 # git
 plugins=(git)
+function gswr {
+  git switch -c woohm402/$(date +%Y%m%d%H%M%S)
+}
 
 # appearance
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh

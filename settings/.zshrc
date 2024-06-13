@@ -8,8 +8,6 @@ alias cdmlw="cd ~/code/mathpresso/qanda-frontend/services/lms-web"
 alias cdmmw="cd ~/code/mathpresso/qanda-frontend/services/mathcoach-web"
 
 alias cdw="cd ~/code/wafflestudio"
-alias cdwsew="cd ~/code/wafflestudio/snutt-ev-web"
-alias cdwsw2="cd ~/code/wafflestudio/snutt-webclient-v2"
 
 # git
 plugins=(git)
@@ -51,5 +49,5 @@ PATH=~/.console-ninja/.bin:$PATH
 
 # node
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion

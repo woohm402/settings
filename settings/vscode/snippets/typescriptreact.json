@@ -1,0 +1,12 @@
+{
+  "ClassName": {
+    "prefix": "cls",
+    "body": ["className={styles.$1}"],
+    "description": "give className to element"
+  },
+  "ClassName Multiple": {
+    "prefix": "clsx",
+    "body": ["className={clsx(styles.$1)}"],
+    "description": "give multiple className to element"
+  }
+}

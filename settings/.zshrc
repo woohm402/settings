@@ -1,13 +1,16 @@
 # alias
 alias ppc="pwd | xargs echo 'cd' | pbcopy"
-alias cdc="cd ~/code"
 
+alias cdc="cd ~/code"
 alias cdm="cd ~/code/mathpresso"
 alias cdmqf="cd ~/code/mathpresso/qanda-frontend"
 alias cdmlw="cd ~/code/mathpresso/qanda-frontend/services/lms-web"
 alias cdmmw="cd ~/code/mathpresso/qanda-frontend/services/mathcoach-web"
-
 alias cdw="cd ~/code/wafflestudio"
+
+alias scarc="open https://resources.arc.net/hc/en-us/articles/20595231349911-Keyboard-Shortcuts"
+alias scslack="open https://slack.com/intl/ko-kr/help/articles/201374536-Slack-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%8B%A8%EC%B6%95%ED%82%A4"
+alias scgithub="open https://docs.github.com/en/get-started/accessibility/keyboard-shortcuts"
 
 # git
 plugins=(git)

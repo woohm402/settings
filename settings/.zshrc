@@ -19,6 +19,9 @@ plugins=(git)
 function gswr {
   git switch -c woohm402/$(date +%Y%m%d%H%M%S)
 }
+function ghpr {
+  open "$(git config --get remote.origin.url | sed 's/\.git//g')/pull/new/$(git branch --show-current)"
+}
 
 # appearance
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh

@@ -11,6 +11,7 @@ alias cdw="cd ~/code/wafflestudio"
 alias scarc="open https://resources.arc.net/hc/en-us/articles/20595231349911-Keyboard-Shortcuts"
 alias scslack="open https://slack.com/intl/ko-kr/help/articles/201374536-Slack-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%8B%A8%EC%B6%95%ED%82%A4"
 alias scgithub="open https://docs.github.com/en/get-started/accessibility/keyboard-shortcuts"
+alias sckakakotalk="open https://cs.kakao.com/helps_html/1073182634?locale=ko"
 
 # git
 plugins=(git)

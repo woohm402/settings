@@ -14,6 +14,7 @@ alias scfigma="open https://help.figma.com/hc/en-us/articles/360040328653-Keyboa
 alias scgithub="open https://docs.github.com/en/get-started/accessibility/keyboard-shortcuts"
 alias sckakakotalk="open https://cs.kakao.com/helps_html/1073182634?locale=ko"
 alias scnotion="open https://www.notion.so/ko-kr/help/keyboard-shortcuts"
+alias scobsidian="open https://help.obsidian.md/Editing+and+formatting/Editing+shortcuts"
 alias scslack="open https://slack.com/intl/ko-kr/help/articles/201374536-Slack-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%8B%A8%EC%B6%95%ED%82%A4"
 
 # git

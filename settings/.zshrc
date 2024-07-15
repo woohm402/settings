@@ -8,14 +8,14 @@ alias cdmlw="cd ~/code/mathpresso/qanda-frontend/services/lms-web"
 alias cdmmw="cd ~/code/mathpresso/qanda-frontend/services/mathcoach-web"
 alias cdw="cd ~/code/wafflestudio"
 
-alias scarc="open https://resources.arc.net/hc/en-us/articles/20595231349911-Keyboard-Shortcuts"
-alias scdiscord="open https://support.discord.com/hc/en-us/articles/225878307--macOS-Discord-Hotkeys"
-alias scfigma="open https://help.figma.com/hc/en-us/articles/360040328653-Keyboard-shortcuts-in-Figma"
-alias scgithub="open https://docs.github.com/en/get-started/accessibility/keyboard-shortcuts"
-alias sckakakotalk="open https://cs.kakao.com/helps_html/1073182634?locale=ko"
-alias scnotion="open https://www.notion.so/ko-kr/help/keyboard-shortcuts"
-alias scobsidian="open https://help.obsidian.md/Editing+and+formatting/Editing+shortcuts"
-alias scslack="open https://slack.com/intl/ko-kr/help/articles/201374536-Slack-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%8B%A8%EC%B6%95%ED%82%A4"
+alias manarc="open https://resources.arc.net/hc/en-us/articles/20595231349911-Keyboard-Shortcuts"
+alias mandiscord="open https://support.discord.com/hc/en-us/articles/225878307--macOS-Discord-Hotkeys"
+alias manfigma="open https://help.figma.com/hc/en-us/articles/360040328653-Keyboard-shortcuts-in-Figma"
+alias mangithub="open https://docs.github.com/en/get-started/accessibility/keyboard-shortcuts"
+alias mankakakotalk="open https://cs.kakao.com/helps_html/1073182634?locale=ko"
+alias mannotion="open https://www.notion.so/ko-kr/help/keyboard-shortcuts"
+alias manobsidian="open https://help.obsidian.md/Editing+and+formatting/Editing+shortcuts"
+alias manslack="open https://slack.com/intl/ko-kr/help/articles/201374536-Slack-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%8B%A8%EC%B6%95%ED%82%A4"
 
 # git
 plugins=(git)

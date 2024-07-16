@@ -12,6 +12,7 @@ alias manarc="open https://resources.arc.net/hc/en-us/articles/20595231349911-Ke
 alias mandiscord="open https://support.discord.com/hc/en-us/articles/225878307--macOS-Discord-Hotkeys"
 alias manfigma="open https://help.figma.com/hc/en-us/articles/360040328653-Keyboard-shortcuts-in-Figma"
 alias mangithub="open https://docs.github.com/en/get-started/accessibility/keyboard-shortcuts"
+alias mangooglecalendar="open https://support.google.com/calendar/answer/37034?hl=en"
 alias mankakakotalk="open https://cs.kakao.com/helps_html/1073200262"
 alias manmac="open https://support.apple.com/ko-kr/102650"
 alias manmessage="open https://support.apple.com/ko-kr/guide/messages/ichtc78b3bff/mac"

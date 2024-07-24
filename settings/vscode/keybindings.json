@@ -17,5 +17,9 @@
     "key": "cmd+i",
     "command": "-github.copilot.terminal.suggestCommand",
     "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+;",
+    "command": "terminal.focus"
   }
 ]

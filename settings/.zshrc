@@ -19,6 +19,7 @@ alias manmessage="open https://support.apple.com/ko-kr/guide/messages/ichtc78b3b
 alias mannotion="open https://www.notion.so/ko-kr/help/keyboard-shortcuts"
 alias manobsidian="open https://help.obsidian.md/Editing+and+formatting/Editing+shortcuts"
 alias manslack="open https://slack.com/intl/ko-kr/help/articles/201374536-Slack-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%8B%A8%EC%B6%95%ED%82%A4"
+alias manvim="open https://vim.rtorr.com/"
 
 # git
 plugins=(git)

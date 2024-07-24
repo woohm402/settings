@@ -14,6 +14,10 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -130,14 +134,11 @@
   "github.copilot.editor.enableCodeActions": false,
   "window.titleBarStyle": "custom",
   "terminal.integrated.env.osx": {},
-  "console-ninja.featureSet": "Community",
   "diffEditor.ignoreTrimWhitespace": false,
   "terminal.integrated.fontWeight": "bold",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.lineHeight": 1.2,
-  "vim.smartRelativeLine": true,
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.formatOnSave": true,
-  "cmake.showOptionsMovedNotification": false,
   "github.copilot.editor.enableAutoCompletions": true
 }

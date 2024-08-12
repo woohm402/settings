@@ -21,5 +21,9 @@
   {
     "key": "cmd+;",
     "command": "terminal.focus"
+  },
+  {
+    "key": "ctrl+\\",
+    "command": "editor.emmet.action.matchTag"
   }
 ]

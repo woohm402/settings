@@ -1,13 +1,6 @@
 # alias
 alias ppc="pwd | xargs echo 'cd' | pbcopy"
 
-alias cdc="cd ~/code"
-alias cdm="cd ~/code/mathpresso"
-alias cdmqf="cd ~/code/mathpresso/qanda-frontend"
-alias cdmlw="cd ~/code/mathpresso/qanda-frontend/services/lms-web"
-alias cdmmw="cd ~/code/mathpresso/qanda-frontend/services/mathcoach-web"
-alias cdw="cd ~/code/wafflestudio"
-
 alias manarc="open https://resources.arc.net/hc/en-us/articles/20595231349911-Keyboard-Shortcuts"
 alias mandiscord="open https://support.discord.com/hc/en-us/articles/225878307--macOS-Discord-Hotkeys"
 alias manfigma="open https://help.figma.com/hc/en-us/articles/360040328653-Keyboard-shortcuts-in-Figma"

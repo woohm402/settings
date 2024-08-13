@@ -1,24 +1,5 @@
 # ------------------------------
 #
-# ███████╗██╗  ██╗███████╗██╗     ██╗
-# ██╔════╝██║  ██║██╔════╝██║     ██║
-# ███████╗███████║█████╗  ██║     ██║
-# ╚════██║██╔══██║██╔══╝  ██║     ██║
-# ███████║██║  ██║███████╗███████╗███████╗
-# ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
-
-# zsh setting
-export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
-
-# appearance & behavior
-ZSH_THEME="lambda"
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-precmd() { echo; }
-
-# ------------------------------
-#
 # ████████╗ ██████╗  ██████╗ ██╗
 # ╚══██╔══╝██╔═══██╗██╔═══██╗██║
 #    ██║   ██║   ██║██║   ██║██║
@@ -103,3 +84,22 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # gcp
 if [ -f '~/.google-cloud-sdk/path.zsh.inc' ]; then . '~/.google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '~/.google-cloud-sdk/completion.zsh.inc' ]; then . '~/.google-cloud-sdk/completion.zsh.inc'; fi
+
+# ------------------------------
+#
+# ███████╗██╗  ██╗███████╗██╗     ██╗
+# ██╔════╝██║  ██║██╔════╝██║     ██║
+# ███████╗███████║█████╗  ██║     ██║
+# ╚════██║██╔══██║██╔══╝  ██║     ██║
+# ███████║██║  ██║███████╗███████╗███████╗
+# ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
+
+# appearance & behavior
+ZSH_THEME="lambda"
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+precmd() { echo; }
+
+# zsh setting. this line should be at the end of the file.
+export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh

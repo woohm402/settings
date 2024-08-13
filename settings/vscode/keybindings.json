@@ -25,5 +25,9 @@
   {
     "key": "ctrl+\\",
     "command": "editor.emmet.action.matchTag"
+  },
+  {
+    "key": "ctrl+shift+\\",
+    "command": "editor.emmet.action.balanceOut"
   }
 ]

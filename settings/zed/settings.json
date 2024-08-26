@@ -1,0 +1,35 @@
+{
+  "theme": "Catppuccin Frappé - No Italics",
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-20240620"
+    },
+    "version": "2"
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "buffer_font_family": "Monaspace Krypton",
+  "buffer_font_weight": 600,
+  "ui_font_family": "Monaspace Krypton",
+  "terminal": {
+    "font_family": "Monaspace Krypton",
+    "font_weight": 800
+  },
+  "format_on_save": "on",
+  "formatter": "auto",
+  "code_actions_on_format": {
+    "source.fixAll.eslint": true
+  },
+  "lsp": {
+    "vtsls": {
+      "initialization_options": {
+        "typescript": {
+          "preferences": {
+            "importModuleSpecifier": "non-relative"
+          }
+        }
+      }
+    }
+  }
+}

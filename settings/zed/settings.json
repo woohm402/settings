@@ -13,6 +13,7 @@
   "buffer_font_weight": 600,
   "ui_font_family": "Monaspace Krypton",
   "terminal": {
+    "dock": "right",
     "font_family": "Monaspace Krypton",
     "font_weight": 800
   },

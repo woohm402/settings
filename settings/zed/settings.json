@@ -1,5 +1,8 @@
 {
-  "theme": "Catppuccin Frappé - No Italics",
+  "features": {
+    "inline_completion_provider": "copilot"
+  },
+  "theme": "GitHub Copilot Theme - Dark",
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
@@ -10,12 +13,12 @@
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "buffer_font_family": "Monaspace Krypton",
-  "buffer_font_weight": 600,
+  "buffer_font_weight": 500,
   "ui_font_family": "Monaspace Krypton",
   "terminal": {
     "dock": "right",
     "font_family": "Monaspace Krypton",
-    "font_weight": 800
+    "font_weight": 600
   },
   "format_on_save": "on",
   "formatter": "auto",

@@ -1,50 +1,92 @@
 {
-  "workbench.colorTheme": "GitHub Dark Dimmed",
-  "workbench.editor.labelFormat": "short",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[dockerfile]": { "editor.defaultFormatter": "ms-azuretools.vscode-docker" },
+  "[dotenv]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
+  "[feature]": {
+    "editor.defaultFormatter": "alexkrechik.cucumberautocomplete"
   },
-  "editor.tabSize": 2,
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "[ignore]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[proto3]": { "editor.defaultFormatter": "zxh404.vscode-proto3" },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
     "editor.formatOnSave": true
   },
+  "[shellscript]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
+  "[svelte]": { "editor.defaultFormatter": "svelte.svelte-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[xml]": { "editor.defaultFormatter": "DotJoshJohnson.xml" },
+  "css.lint.validProperties": ["composes"],
+  "cucumberautocomplete.steps": [
+    "test/features/step_definitions/*.js",
+    "node_modules/qa-lib/src/step_definitions/*.js"
+  ],
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" },
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.fontFamily": "Monaspace Krypton",
+  "editor.fontLigatures": "'calt', 'liga', 'dlig'",
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
   "editor.suggestSelection": "first",
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
-  },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
+  "editor.tabSize": 2,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "eslint.format.enable": true,
+  "eslint.packageManager": "yarn",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact"
   ],
-  "eslint.packageManager": "yarn",
-  "eslint.format.enable": true,
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
-  },
+  "explorer.compactFolders": false,
   "explorer.confirmDragAndDrop": false,
-  "workbench.iconTheme": "vscode-icons",
   "explorer.openEditors.visible": 0,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.editor.enableCodeActions": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "yaml": true
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "powermode.enabled": true,
+  "powermode.explosions.customExplosions": [
+    "https://media.giphy.com/media/1fhj2RprUOpqCObj2J/giphy.gif"
+  ],
+  "powermode.explosions.frequency": 6,
+  "powermode.explosions.maxExplosions": 2,
+  "powermode.explosions.size": 8,
+  "powermode.shake.enabled": false,
+  "svelte.enable-ts-plugin": true,
+  "synthwave84.brightness": 1,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.env.osx": {},
+  "terminal.integrated.fontFamily": "Monaspace Krypton",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontWeight": "bold",
+  "terminal.integrated.gpuAcceleration": "off",
+  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.localEchoStyle": "dim",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vsicons.dontShowNewVersionMessage": true,
+  "window.titleBarStyle": "custom",
   "workbench.colorCustomizations": {
     "[Material Theme Darker]": {
       "activityBarBadge.background": "#616161",
@@ -72,73 +114,7 @@
       "statusBarItem.remoteBackground": "#616161"
     }
   },
-  "synthwave84.brightness": 1,
-  "terminal.integrated.gpuAcceleration": "off",
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "svelte.enable-ts-plugin": true,
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "editor.fontSize": 16,
-  "editor.fontFamily": "Monaspace Krypton",
-  "editor.fontLigatures": "'calt', 'liga', 'dlig'",
-  "terminal.integrated.fontFamily": "Monaspace Krypton",
-  "terminal.integrated.localEchoStyle": "dim",
-  "powermode.enabled": true,
-  "powermode.shake.enabled": false,
-  "powermode.explosions.maxExplosions": 2,
-  "powermode.explosions.size": 8,
-  "powermode.explosions.frequency": 6,
-  "powermode.explosions.customExplosions": [
-    "https://media.giphy.com/media/1fhj2RprUOpqCObj2J/giphy.gif"
-  ],
-  "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[dotenv]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "vsicons.dontShowNewVersionMessage": true,
-  "[xml]": {
-    "editor.defaultFormatter": "DotJoshJohnson.xml"
-  },
-  "editor.inlineSuggest.enabled": true,
-  "cucumberautocomplete.steps": [
-    "test/features/step_definitions/*.js",
-    "node_modules/qa-lib/src/step_definitions/*.js"
-  ],
-  "cucumberautocomplete.strictGherkinCompletion": true,
-  "[feature]": {
-    "editor.defaultFormatter": "alexkrechik.cucumberautocomplete"
-  },
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
-  "[proto3]": {
-    "editor.defaultFormatter": "zxh404.vscode-proto3"
-  },
-  "explorer.compactFolders": false,
-  "editor.unicodeHighlight.ambiguousCharacters": false,
-  "git.openRepositoryInParentFolders": "never",
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false,
-    "yaml": true
-  },
-  "css.lint.validProperties": ["composes"],
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.cursorBlinking": "smooth",
-  "github.copilot.editor.enableCodeActions": false,
-  "window.titleBarStyle": "custom",
-  "terminal.integrated.env.osx": {},
-  "diffEditor.ignoreTrimWhitespace": false,
-  "terminal.integrated.fontWeight": "bold",
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.lineHeight": 1.2,
-  "editor.unicodeHighlight.nonBasicASCII": false,
-  "editor.formatOnSave": true,
-  "github.copilot.editor.enableAutoCompletions": true
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.editor.labelFormat": "short",
+  "workbench.iconTheme": "vscode-icons"
 }

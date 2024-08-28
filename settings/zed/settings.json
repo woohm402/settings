@@ -1,8 +1,4 @@
 {
-  "features": {
-    "inline_completion_provider": "copilot"
-  },
-  "theme": "GitHub Copilot Theme - Dark",
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
@@ -10,33 +6,35 @@
     },
     "version": "2"
   },
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
   "buffer_font_family": "Monaspace Krypton",
+  "buffer_font_size": 16,
   "buffer_font_weight": 500,
-  "ui_font_family": "Monaspace Krypton",
+  "code_actions_on_format": { "source.fixAll.eslint": true },
+  "current_line_highlight": "gutter",
+  "experimental.theme_overrides": {
+    "editor.document_highlight.read_background": "#00000000"
+  },
+  "features": { "inline_completion_provider": "copilot" },
+  "lsp": {
+    "vtsls": {
+      "initialization_options": {
+        "typescript": {
+          "preferences": { "importModuleSpecifier": "non-relative" }
+        }
+      }
+    }
+  },
+  "project_panel": { "folder_icons": false, "auto_fold_dirs": false },
+  "tab_bar": { "show_nav_history_buttons": false },
+  "tab_size": 2,
+  "tabs": { "file_icons": true, "git_status": true },
   "terminal": {
     "dock": "right",
     "font_family": "Monaspace Krypton",
     "font_weight": 600
   },
-  "format_on_save": "on",
-  "formatter": "auto",
-  "code_actions_on_format": {
-    "source.fixAll.eslint": true
-  },
-  "lsp": {
-    "vtsls": {
-      "initialization_options": {
-        "typescript": {
-          "preferences": {
-            "importModuleSpecifier": "non-relative"
-          }
-        }
-      }
-    }
-  },
-  "project_panel": {
-    "folder_icons": false
-  }
+  "theme": "GitHub Copilot Theme - Dark",
+  "toolbar": { "breadcrumbs": false, "quick_actions": false },
+  "ui_font_family": "Monaspace Krypton",
+  "ui_font_size": 16
 }

@@ -25,6 +25,11 @@
     }
   },
   "project_panel": { "folder_icons": false, "auto_fold_dirs": false },
+  "languages": {
+    "Markdown": {
+      "soft_wrap": "editor_width"
+    }
+  },
   "tab_bar": { "show_nav_history_buttons": false },
   "tab_size": 2,
   "tabs": { "file_icons": true, "git_status": true },
@@ -33,7 +38,7 @@
     "font_family": "Monaspace Krypton",
     "font_weight": 600
   },
-  "theme": "GitHub Copilot Theme - Dark",
+  "theme": "Dracula",
   "toolbar": { "breadcrumbs": false, "quick_actions": false },
   "ui_font_family": "Monaspace Krypton",
   "ui_font_size": 16

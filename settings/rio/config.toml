@@ -1,0 +1,81 @@
+cursor = ' '
+blinking-cursor = true
+padding-x = 10
+padding-y = [30, 10]
+option-as-alt = 'left'
+line-height = 1.2
+confirm-before-quit = false
+
+[window]
+mode = "Maximized"
+opacity = 0.8
+blur = true
+decorations = "Enabled"
+
+[renderer]
+performance = "High"
+backend = "Automatic"
+
+[fonts]
+family = "Monaspace Krypton"
+size = 18
+
+[fonts.regular]
+style = "normal"
+weight = 600
+
+[fonts.bold]
+style = "normal"
+weight = 800
+
+[fonts.italic]
+style = "italic"
+weight = 400
+
+[fonts.bold-italic]
+style = "italic"
+weight = 800
+
+[scroll]
+multiplier = 3.0
+divider = 1.0
+
+[navigation]
+mode = "CollapsedTab"
+clickable = false
+hide-if-single = true
+use-current-path = false
+color-automation = []
+
+[colors]
+background = '#282A36'
+black = '#44475A'
+blue = '#BD93F9'
+cursor = '#F8F8F2'
+cyan = '#8BE9FD'
+foreground = '#F8F8F2'
+green = '#50fa7b'
+magenta = '#FF79C6'
+red = '#FF5555'
+tabs = '#494c62'
+tabs-active = '#6a6e8e'
+white = '#F8F8F2'
+yellow = '#F1FA8C'
+dim-black = '#393C4b'
+dim-blue = '#AE7BF8'
+dim-cyan = '#69C3dE'
+dim-foreground = '#dfdfd9'
+dim-green = '#06572F'
+dim-magenta = '#FF60BB'
+dim-red = '#FF3C3C'
+dim-white = '#EFEFE1'
+dim-yellow = '#E6A003'
+light-black = '#6272A4'
+light-blue = '#D6ACFF'
+light-cyan = '#A4FFFF'
+light-foreground = '#f8f8f1'
+light-green = '#69FF94'
+light-magenta = '#FF92DF'
+light-red = '#FF6E6E'
+light-white = '#FFFFFF'
+light-yellow = '#FFFFA5'

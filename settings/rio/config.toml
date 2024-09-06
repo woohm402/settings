@@ -41,10 +41,8 @@ multiplier = 3.0
 divider = 1.0
 
 [navigation]
-mode = "CollapsedTab"
-clickable = false
-hide-if-single = true
-use-current-path = false
+mode = "NativeTab"
+use-current-path = true
 color-automation = []
 
 [colors]

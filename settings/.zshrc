@@ -56,7 +56,7 @@ alias manvim="open https://vim.rtorr.com/"
 export PATH=$PATH:~/Library/Python/3.8/bin
 
 # java
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 # js: node
 export NVM_DIR="$HOME/.nvm"

@@ -55,12 +55,8 @@ alias manvim="open https://vim.rtorr.com/"
 # python: pip
 export PATH=$PATH:~/Library/Python/3.8/bin
 
-# android emulator & java
-export PATH=$PATH:~/Library/Android/sdk/emulator/
-export PATH=$PATH:~/Library/Android/sdk/platform-tools/
+# java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
-export PATH=$JAVA_HOME/bin:$PATH
 
 # javascript: node
 export NVM_DIR="$HOME/.nvm"
@@ -68,9 +64,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 export PATH="$(yarn global bin):$PATH"
 
+# javascript: deno
+export DENO_INSTALL="/Users/woohyunmin/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 # javascript: bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "/Users/woohyunmin/.bun/_bun" ] && source "/Users/woohyunmin/.bun/_bun"
 
 # ------------------------------
 #
@@ -103,3 +104,9 @@ precmd() { echo; }
 # zsh setting. this line should be at the end of the file.
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/woohyunmin/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/woohyunmin/.google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/woohyunmin/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/woohyunmin/.google-cloud-sdk/completion.zsh.inc'; fi

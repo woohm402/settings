@@ -58,17 +58,17 @@ export PATH=$PATH:~/Library/Python/3.8/bin
 # java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-# javascript: node
+# js: node
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 export PATH="$(yarn global bin):$PATH"
 
-# javascript: deno
+# js: deno
 export DENO_INSTALL="/Users/woohyunmin/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
-# javascript: bun
+# js: bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "/Users/woohyunmin/.bun/_bun" ] && source "/Users/woohyunmin/.bun/_bun"

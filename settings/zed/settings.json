@@ -22,6 +22,11 @@
           "preferences": { "importModuleSpecifier": "non-relative" }
         }
       }
+    },
+    "biome": {
+      "settings": {
+        "require_config_file": true
+      }
     }
   },
   "project_panel": { "folder_icons": false, "auto_fold_dirs": false },

@@ -10,9 +10,7 @@
   "buffer_font_size": 16,
   "buffer_font_weight": 500,
   "code_actions_on_format": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.biome": true,
-    "source.organizeImports.biome": true
+    "source.fixAll.eslint": true
   },
   "current_line_highlight": "gutter",
   "experimental.theme_overrides": {
@@ -65,10 +63,5 @@
     "quick_actions": false
   },
   "ui_font_family": "Monaspace Krypton",
-  "ui_font_size": 16,
-  "formatter": {
-    "language_server": {
-      "name": "biome"
-    }
-  }
+  "ui_font_size": 16
 }

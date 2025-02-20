@@ -27,7 +27,7 @@
     "editor.document_highlight.read_background": "#00000000"
   },
   "features": {
-    "inline_completion_provider": "copilot"
+    "edit_prediction_provider": "zed"
   },
   "lsp": {
     "vtsls": {

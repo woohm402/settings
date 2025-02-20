@@ -1,15 +1,3 @@
-# ------------------------------
-#
-# ████████╗ ██████╗  ██████╗ ██╗
-# ╚══██╔══╝██╔═══██╗██╔═══██╗██║
-#    ██║   ██║   ██║██║   ██║██║
-#    ██║   ██║   ██║██║   ██║██║
-#    ██║   ╚██████╔╝╚██████╔╝███████╗
-#    ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝
-
-# directory
-alias ppc="pwd | xargs echo 'cd' | pbcopy"
-
 # git
 function gswr {
   git switch -c woohm402/$(date +%Y%m%d%H%M%S)
@@ -18,14 +6,7 @@ function ghpr {
   open "$(git config --get remote.origin.url | sed 's/\.git//g')/pull/new/$(git branch --show-current)"
 }
 
-# ------------------------------
-#
-# ███████╗██╗  ██╗ ██████╗ ██████╗ ████████╗ ██████╗██╗   ██╗████████╗
-# ██╔════╝██║  ██║██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██║   ██║╚══██╔══╝
-# ███████╗███████║██║   ██║██████╔╝   ██║   ██║     ██║   ██║   ██║
-# ╚════██║██╔══██║██║   ██║██╔══██╗   ██║   ██║     ██║   ██║   ██║
-# ███████║██║  ██║╚██████╔╝██║  ██║   ██║   ╚██████╗╚██████╔╝   ██║
-# ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═════╝    ╚═╝
+# shortcuts
 alias manarc="open https://resources.arc.net/hc/en-us/articles/20595231349911-Keyboard-Shortcuts"
 alias mandiscord="open https://support.discord.com/hc/en-us/articles/225878307--macOS-Discord-Hotkeys"
 alias manfigma="open https://help.figma.com/hc/en-us/articles/360040328653-Keyboard-shortcuts-in-Figma"
@@ -39,57 +20,26 @@ alias manobsidian="open https://help.obsidian.md/Editing+and+formatting/Editing+
 alias manslack="open https://slack.com/intl/ko-kr/help/articles/201374536-Slack-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%8B%A8%EC%B6%95%ED%82%A4"
 alias manvim="open https://vim.rtorr.com/"
 
-# ------------------------------
-#
-#██╗      █████╗ ███╗   ██╗ ██████╗ ██╗   ██╗ █████╗  ██████╗ ███████╗
-#██║     ██╔══██╗████╗  ██║██╔════╝ ██║   ██║██╔══██╗██╔════╝ ██╔════╝
-#██║     ███████║██╔██╗ ██║██║  ███╗██║   ██║███████║██║  ███╗█████╗
-#██║     ██╔══██║██║╚██╗██║██║   ██║██║   ██║██╔══██║██║   ██║██╔══╝
-#███████╗██║  ██║██║ ╚████║╚██████╔╝╚██████╔╝██║  ██║╚██████╔╝███████╗
-#╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
-
-# python: pip
+# Languages
 export PATH=$PATH:~/Library/Python/3.8/bin
-
-# java
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
-
-# js: node
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 export PATH="$(yarn global bin):$PATH"
-
-# js: deno
 export DENO_INSTALL="/Users/woohyunmin/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
-
-# js: bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "/Users/woohyunmin/.bun/_bun" ] && source "/Users/woohyunmin/.bun/_bun"
-
-# ------------------------------
-#
-# ██████╗ ██╗      █████╗ ████████╗███████╗ ██████╗ ██████╗ ███╗   ███╗
-# ██╔══██╗██║     ██╔══██╗╚══██╔══╝██╔════╝██╔═══██╗██╔══██╗████╗ ████║
-# ██████╔╝██║     ███████║   ██║   █████╗  ██║   ██║██████╔╝██╔████╔██║
-# ██╔═══╝ ██║     ██╔══██║   ██║   ██╔══╝  ██║   ██║██╔══██╗██║╚██╔╝██║
-# ██║     ███████╗██║  ██║   ██║   ██║     ╚██████╔╝██║  ██║██║ ╚═╝ ██║
-# ╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝
 
 # gcp
 if [ -f '/Users/woohyunmin/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/woohyunmin/.google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/Users/woohyunmin/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/woohyunmin/.google-cloud-sdk/completion.zsh.inc'; fi
 
-# ------------------------------
-#
-# ███████╗██╗  ██╗███████╗██╗     ██╗
-# ██╔════╝██║  ██║██╔════╝██║     ██║
-# ███████╗███████║█████╗  ██║     ██║
-# ╚════██║██╔══██║██╔══╝  ██║     ██║
-# ███████║██║  ██║███████╗███████╗███████╗
-# ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
+# homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
 
 # appearance & behavior
 ZSH_THEME="lambda"

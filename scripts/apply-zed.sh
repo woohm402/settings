@@ -3,4 +3,4 @@
 CURRENT_SCRIPT_PATH="$(cd "$(dirname "$0")" && pwd)"
 SETTINGS_TARGET_PATH="$CURRENT_SCRIPT_PATH/../settings"
 
-cp "$SETTINGS_TARGET_PATH/zsh/.zshrc" ~/.zshrc
+cp "$SETTINGS_TARGET_PATH/rio/config.toml" ~/.config/rio/config.toml

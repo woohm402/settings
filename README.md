@@ -12,18 +12,10 @@
 ./scripts/apply-zshrc.sh
 ```
 
-### iTerm
+### Rio (v0.2.7)
 
-사용하지 않습니다. Rio 를 씁니다.
-
-### vscode
-
-사용하지 않습니다. Zed 를 씁니다.
-
-### Rio
-
-`~/.config/rio/config.toml` 입니다.
+`~/.config/rio/config.toml`
 
 ### Zed
 
-`~/.config/zed/settings.json`, `~/.config/zed/keymap.json` 입니다.
+`~/.config/zed/`

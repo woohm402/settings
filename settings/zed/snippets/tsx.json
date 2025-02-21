@@ -1,0 +1,12 @@
+{
+  "Single className": {
+    "prefix": "cls",
+    "body": ["className=\"$0\""],
+    "description": "className"
+  },
+  "Multiple className": {
+    "prefix": "clx",
+    "body": ["className={clsx($0)}"],
+    "description": "clsx"
+  }
+}

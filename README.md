@@ -2,20 +2,8 @@
 
 개발환경 세팅을 저장해두고 SSOT로 활용하는 repository 입니다.
 
-## Features
+## usage
 
-### zshrc
-
-아래 명령어로 `~/.zshrc` 에 settings의 zshrc를 설정할 수 있습니다.
-
-```sh
-./scripts/apply-zshrc.sh
+```bash
+curl -L https://settings.woohm404.com/init.sh | bash
 ```
-
-### Rio (v0.2.7)
-
-`~/.config/rio/config.toml`
-
-### Zed
-
-`~/.config/zed/`

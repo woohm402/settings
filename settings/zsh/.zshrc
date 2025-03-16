@@ -21,21 +21,19 @@ alias manslack="open https://slack.com/intl/ko-kr/help/articles/201374536-Slack-
 alias manvim="open https://vim.rtorr.com/"
 
 # Languages
-export PATH=$PATH:~/Library/Python/3.8/bin
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-export PATH="$(yarn global bin):$PATH"
-export DENO_INSTALL="/Users/woohyunmin/.deno"
+export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-[ -s "/Users/woohyunmin/.bun/_bun" ] && source "/Users/woohyunmin/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # gcp
-if [ -f '/Users/woohyunmin/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/woohyunmin/.google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/Users/woohyunmin/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/woohyunmin/.google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 # homebrew
 export PATH="/opt/homebrew/bin:$PATH"
@@ -44,10 +42,8 @@ export PATH="/opt/homebrew/sbin:$PATH"
 # appearance & behavior
 ZSH_THEME="lambda"
 plugins=(git z)
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-eval $(thefuck --alias)
-source <(fzf --zsh)
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 precmd() { echo; }
 
 # zsh setting. this line should be at the end of the file.

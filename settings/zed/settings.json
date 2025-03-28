@@ -23,6 +23,9 @@
     "source.fixAll.eslint": true
   },
   "current_line_highlight": "gutter",
+  "edit_predictions": {
+    "mode": "subtle"
+  },
   "experimental.theme_overrides": {
     "editor.document_highlight.read_background": "#00000000"
   },

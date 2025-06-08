@@ -44,7 +44,7 @@ fi
 echo "Downloading configuration files..."
 mkdir -p ~/.config/{rio,zed/snippets}
 BASE_URL="https://raw.githubusercontent.com/woohm402/settings/main/settings"
-curl -fsSL "$BASE_URL/rio/config.toml" > ~/.config/rio/config.toml
+curl -fsSL "$BASE_URL/wezterm/wezterm.lua" > ~/.config/wezterm/wezterm.lua
 curl -fsSL "$BASE_URL/zed/settings.json" > ~/.config/zed/settings.json
 curl -fsSL "$BASE_URL/zed/keymap.json" > ~/.config/zed/keymap.json
 curl -fsSL "$BASE_URL/zed/snippets/tsx.json" > ~/.config/zed/snippets/tsx.json

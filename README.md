@@ -7,3 +7,8 @@
 ```bash
 curl -L https://settings.woohm404.com/init.sh | bash
 ```
+
+## Programs
+
+- [`zed`](https://zed.dev)
+- [`wezterm`](https://wezterm.org/)

@@ -56,6 +56,9 @@
   "languages": {
     "Markdown": {
       "soft_wrap": "editor_width"
+    },
+    "TypeScript": {
+      "language_servers": ["tsgo", "vtsls"]
     }
   },
   "tab_bar": {

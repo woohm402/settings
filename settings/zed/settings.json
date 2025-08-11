@@ -3,9 +3,8 @@
     "default_profile": "write",
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
-    },
-    "version": "2"
+      "model": "claude-sonnet-4"
+    }
   },
   "auto_install_extensions": {
     "biome": true,

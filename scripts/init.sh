@@ -62,6 +62,14 @@ else
   echo "zsh-syntax-highlighting already installed, skipping..."
 fi
 
+# Check if zsh-hangul is already installed
+if [ ! -d "$ZSH_PLUGIN_DIR/zsh-hangul" ]; then
+  echo "Installing zsh-hangul..."
+  git clone https://github.com/gomjellie/zsh-hangul.git "$ZSH_PLUGIN_DIR/zsh-hangul"
+else
+  echo "zsh-hangul already installed, skipping..."
+fi
+
 # Download config files
 echo "Downloading configuration files..."
 BASE_URL="https://raw.githubusercontent.com/woohm402/settings/main/settings"

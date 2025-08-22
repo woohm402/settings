@@ -45,7 +45,7 @@ export PATH="/opt/homebrew/sbin:$PATH"
 
 # appearance & behavior
 ZSH_THEME="lambda"
-plugins=(git z)
+plugins=(git z zsh-hangul)
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 precmd() { echo; }

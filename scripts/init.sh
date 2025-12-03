@@ -42,6 +42,22 @@ else
   echo "Bun already installed, skipping..."
 fi
 
+# cargo-binstall
+if ! command -v cargo-binstall &> /dev/null; then
+  echo "Installing cargo-binstall..."
+  curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+else
+  echo "cargo-binstall already installed, skipping..."
+fi
+
+# zellij
+if ! command -v zellij &> /dev/null; then
+  echo "Installing zellij..."
+  cargo binstall zellij -y
+else
+  echo "zellij already installed, skipping..."
+fi
+
 # zsh plugins
 echo "Setting up zsh plugins..."
 ZSH_PLUGIN_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins"
@@ -75,14 +91,9 @@ echo "Downloading configuration files..."
 BASE_URL="https://raw.githubusercontent.com/woohm402/settings/main/settings"
 
 # Create directories if they don't exist
-mkdir -p ~/.config/rio
 mkdir -p ~/.config/zed/snippets
-mkdir -p ~/.config/wezterm
 
 # Download and update config files
-echo "Updating wezterm config..."
-curl -fsSL "$BASE_URL/wezterm/wezterm.lua" > ~/.config/wezterm/wezterm.lua
-
 echo "Updating zed configs..."
 curl -fsSL "$BASE_URL/zed/settings.json" > ~/.config/zed/settings.json
 curl -fsSL "$BASE_URL/zed/keymap.json" > ~/.config/zed/keymap.json

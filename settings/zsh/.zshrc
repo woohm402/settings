@@ -33,6 +33,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+export PATH="$HOME/.local/bin:$PATH" # uv
 
 # Editor
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"

@@ -42,6 +42,14 @@ else
   echo "Bun already installed, skipping..."
 fi
 
+# uv
+if ! command -v uv &> /dev/null; then
+  echo "Installing uv..."
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+else
+  echo "uv already installed, skipping..."
+fi
+
 # cargo-binstall
 if ! command -v cargo-binstall &> /dev/null; then
   echo "Installing cargo-binstall..."

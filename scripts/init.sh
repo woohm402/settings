@@ -110,4 +110,8 @@ curl -fsSL "$BASE_URL/zed/snippets/tsx.json" > ~/.config/zed/snippets/tsx.json
 echo "Updating zshrc..."
 curl -fsSL "$BASE_URL/zsh/.zshrc" > ~/.zshrc
 
+echo "Updating rectangle config..."
+mkdir -p ~/Library/Application\ Support/Rectangle
+curl -fsSL "$BASE_URL/rectangle/RectangleConfig.json" > ~/Library/Application\ Support/Rectangle/RectangleConfig.json
+
 echo "✅ Setup complete! Run 'source ~/.zshrc' to apply changes or restart your terminal."

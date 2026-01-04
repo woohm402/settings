@@ -10,6 +10,8 @@ This is a dotfiles repository that serves as a Single Source of Truth (SSOT) for
 
 ```
 settings/
+├── rectangle/     # Rectangle window manager configuration
+│   └── RectangleConfig.json
 ├── zed/           # Zed editor configuration
 │   ├── settings.json
 │   ├── keymap.json
@@ -33,13 +35,13 @@ The init script is designed to be **idempotent** - it checks if tools are alread
 - Always preserve this idempotent behavior (check before install)
 - Downloads config files from `https://raw.githubusercontent.com/woohm402/settings/main/settings/`
 - Creates necessary directories before downloading configs
-- Installed tools: Oh My Zsh, Google Cloud SDK, Rust, NVM, Bun
+- Installed tools: Oh My Zsh, Google Cloud SDK, Rust, NVM, Bun, uv, cargo-binstall, zellij
 - Installed zsh plugins: zsh-autosuggestions, zsh-syntax-highlighting, zsh-hangul
 
 ### Configuration File Paths
 When updating the init script, ensure config files are downloaded to:
+- Rectangle: `~/Library/Application Support/Rectangle/` (auto-loaded on launch, file is renamed after loading)
 - Zed: `~/.config/zed/`
-- WezTerm: `~/.config/wezterm/`
 - Zsh: `~/.zshrc`
 
 ### Zed Editor Configuration
@@ -53,4 +55,3 @@ When updating the init script, ensure config files are downloaded to:
 
 - When adding new tool installations to `init.sh`, follow the existing pattern of checking if the tool exists first
 - When adding new config files, update both the `settings/` directory and the download section in `init.sh`
-- The repository previously had wezterm config (see git status: `D settings/wezterm/wezterm.lua`) - it was removed but the init script still references it

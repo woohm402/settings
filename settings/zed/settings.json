@@ -1,11 +1,4 @@
 {
-  "agent": {
-    "default_profile": "write",
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
-    }
-  },
   "auto_install_extensions": {
     "biome": true,
     "catppuccin-icons": true,
@@ -28,9 +21,6 @@
   },
   "experimental.theme_overrides": {
     "editor.document_highlight.read_background": "#00000000"
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
   },
   "lsp": {
     "vtsls": {

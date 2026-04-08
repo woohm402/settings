@@ -114,4 +114,8 @@ echo "Updating rectangle config..."
 mkdir -p ~/Library/Application\ Support/Rectangle
 curl -fsSL "$BASE_URL/rectangle/RectangleConfig.json" > ~/Library/Application\ Support/Rectangle/RectangleConfig.json
 
+echo "Updating cmux config..."
+mkdir -p ~/Library/Application\ Support/com.mitchellh.ghostty
+curl -fsSL "$BASE_URL/cmux/config.ghostty" > ~/Library/Application\ Support/com.mitchellh.ghostty/config.ghostty
+
 echo "✅ Setup complete! Run 'source ~/.zshrc' to apply changes or restart your terminal."

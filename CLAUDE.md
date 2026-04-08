@@ -10,6 +10,8 @@ This is a dotfiles repository that serves as a Single Source of Truth (SSOT) for
 
 ```
 settings/
+├── cmux/          # cmux terminal multiplexer configuration (Ghostty config format)
+│   └── config.ghostty
 ├── rectangle/     # Rectangle window manager configuration
 │   └── RectangleConfig.json
 ├── zed/           # Zed editor configuration
@@ -40,9 +42,15 @@ The init script is designed to be **idempotent** - it checks if tools are alread
 
 ### Configuration File Paths
 When updating the init script, ensure config files are downloaded to:
+- cmux: `~/Library/Application Support/com.mitchellh.ghostty/config.ghostty`
 - Rectangle: `~/Library/Application Support/Rectangle/` (auto-loaded on launch, file is renamed after loading)
 - Zed: `~/.config/zed/`
 - Zsh: `~/.zshrc`
+
+### cmux Configuration
+- Uses Ghostty config format (`config.ghostty`)
+- Font: Monaspace Krypton (matching Zed), Korean fallback: Sarasa Term K
+- Font style: Bold
 
 ### Zed Editor Configuration
 - Uses TypeScript language servers: `tsgo` and `vtsls`

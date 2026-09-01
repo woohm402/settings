@@ -1,8 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-REPO_BASE="https://raw.githubusercontent.com/woohm402/settings/main"
-BASE_URL="$REPO_BASE/settings"
+BASE_URL="https://raw.githubusercontent.com/woohm402/settings/main/settings"
 FAILURES=0
 
 # 설정 파일을 임시 파일로 받은 뒤 성공했을 때만 교체한다.
@@ -164,15 +163,28 @@ if [ "$RECTANGLE_WAS_RUNNING" -eq 1 ]; then
 fi
 
 # macOS 시스템 설정
+# 기본값과 실제로 다른 것만 기록한다. 기본값 그대로인 항목(키 리피트 속도 등)은
+# 넣지 않는다 — 추가 전에 `defaults read`로 현재 값을 먼저 확인할 것.
 echo "Applying macOS defaults..."
-MACOS_SCRIPT="$(mktemp)"
-if curl -fsSL "$REPO_BASE/scripts/macos.sh" -o "$MACOS_SCRIPT"; then
-  bash "$MACOS_SCRIPT"
-else
-  echo "  ⚠️  macos.sh download failed, skipping"
-  FAILURES=$((FAILURES + 1))
-fi
-rm -f "$MACOS_SCRIPT"
+
+# 스크린샷: 파일 대신 클립보드로, 영역 선택 모드
+defaults write com.apple.screencapture target -string "clipboard"
+defaults write com.apple.screencapture style -string "selection"
+
+# Dock: 왼쪽 배치, 작은 아이콘
+defaults write com.apple.dock orientation -string "left"
+defaults write com.apple.dock tilesize -int 26
+
+# Finder: 경로 막대 표시, 갤러리 뷰 기본
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder FXPreferredViewStyle -string "glyv"
+
+# 자동 교정 끄기 (코드/터미널에서 방해됨)
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+killall Dock 2>/dev/null || true
+killall Finder 2>/dev/null || true
 
 if [ "$FAILURES" -gt 0 ]; then
   echo "⚠️  Setup finished with $FAILURES failure(s) — see warnings above."

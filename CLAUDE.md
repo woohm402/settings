@@ -22,8 +22,7 @@ settings/
 └── zsh/           # Zsh shell configuration
     └── .zshrc
 scripts/
-├── init.sh        # Setup script that installs tools and downloads configs
-└── macos.sh       # macOS system preferences (defaults write)
+└── init.sh        # Setup script: installs tools, downloads configs, applies macOS defaults
 ```
 
 ## Key Behaviors
@@ -73,7 +72,11 @@ so there is nothing to track for it.
 - Code actions on format: ESLint auto-fix enabled
 - Font: Monaspace Krypton (installed via the `font-monaspace` cask)
 
-### macOS Defaults (`scripts/macos.sh`)
+### macOS Defaults
+The `defaults write` calls live inline at the end of `scripts/init.sh`, not in a separate
+script. `init.sh` is run via `curl | bash`, so a separate file would mean another network
+fetch that can fail independently — keep them inline.
+
 Only settings that are actually deviated from macOS defaults belong here. Do not add
 `defaults write` calls for values that are already the system default — read the current
 value with `defaults read` before adding anything.

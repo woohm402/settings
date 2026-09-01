@@ -34,4 +34,4 @@ curl -L https://settings.woohm404.com/init.sh | bash
 - `settings/zsh/.zshrc` — 셸 설정
 - `settings/rectangle/` — 창 관리 단축키
 - `settings/homebrew/Brewfile` — 설치 패키지 목록
-- `scripts/macos.sh` — macOS 시스템 설정 (`defaults write`)
+- `scripts/init.sh` — 설치 + 설정 배포 + macOS 시스템 설정(`defaults write`)

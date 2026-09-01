@@ -21,8 +21,6 @@ alias manslack="open https://slack.com/intl/ko-kr/help/articles/201374536-Slack-
 alias manvim="open https://vim.rtorr.com/"
 alias manzshgit="open https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/README.md"
 
-alias zad="zellij attach default"
-
 # Languages
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
@@ -43,9 +41,8 @@ export PATH="/opt/homebrew/sbin:$PATH"
 
 # appearance & behavior
 ZSH_THEME="lambda"
-plugins=(git z zsh-hangul)
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# zsh-syntax-highlighting must stay last in this list.
+plugins=(git z zsh-hangul zsh-autosuggestions zsh-syntax-highlighting)
 precmd() { echo; }
 
 # zsh setting. this line should be at the end of the file.

@@ -1,5 +1,53 @@
 #!/bin/bash
+set -euo pipefail
+
+REPO_BASE="https://raw.githubusercontent.com/woohm402/settings/main"
+BASE_URL="$REPO_BASE/settings"
+FAILURES=0
+
+# 설정 파일을 임시 파일로 받은 뒤 성공했을 때만 교체한다.
+# 리다이렉션(`curl > file`)은 curl 실패 시 대상 파일을 비워버리므로 쓰지 않는다.
+download() {
+  local url="$1" dest="$2" tmp
+  tmp="$(mktemp)"
+  if ! curl -fsSL "$url" -o "$tmp"; then
+    echo "  ⚠️  download failed: $url (keeping existing $dest)"
+    rm -f "$tmp"
+    FAILURES=$((FAILURES + 1))
+    return 0
+  fi
+  if [ -f "$dest" ] && cmp -s "$tmp" "$dest"; then
+    echo "  unchanged: $dest"
+    rm -f "$tmp"
+    return 0
+  fi
+  if [ -f "$dest" ]; then
+    cp "$dest" "$dest.bak"
+    echo "  backed up: $dest -> $dest.bak"
+  fi
+  mkdir -p "$(dirname "$dest")"
+  mv "$tmp" "$dest"
+  chmod 644 "$dest"
+  echo "  updated: $dest"
+  return 0
+}
+
 echo "Starting setup..."
+
+# homebrew — 다른 설치들이 여기에 의존하므로 가장 먼저
+if ! command -v brew &> /dev/null; then
+  echo "Installing Homebrew..."
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  echo "Homebrew already installed, skipping..."
+fi
+
+# 이 스크립트 세션에서도 brew를 쓸 수 있게 PATH 설정
+if [ -x /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x /usr/local/bin/brew ]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
 
 # Install Oh My Zsh if not present
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -58,64 +106,78 @@ else
   echo "cargo-binstall already installed, skipping..."
 fi
 
-# zellij
-if ! command -v zellij &> /dev/null; then
-  echo "Installing zellij..."
-  cargo binstall zellij -y
+# brew 패키지 (CLI + GUI 앱 + 폰트)
+echo "Installing brew packages..."
+BREWFILE="$(mktemp)"
+if curl -fsSL "$BASE_URL/homebrew/Brewfile" -o "$BREWFILE"; then
+  # brew bundle은 cask에 --adopt를 자동으로 붙이므로 수동 설치된 앱과 충돌하지 않는다.
+  # 일부 패키지가 실패해도 설정 파일 동기화는 계속되어야 하므로 non-fatal로 둔다.
+  if ! brew bundle --file "$BREWFILE"; then
+    echo "  ⚠️  brew bundle had failures — continuing"
+    FAILURES=$((FAILURES + 1))
+  fi
 else
-  echo "zellij already installed, skipping..."
+  echo "  ⚠️  Brewfile download failed, skipping brew bundle"
+  FAILURES=$((FAILURES + 1))
 fi
+rm -f "$BREWFILE"
 
 # zsh plugins
 echo "Setting up zsh plugins..."
 ZSH_PLUGIN_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins"
 
-# Check if zsh-autosuggestions is already installed
-if [ ! -d "$ZSH_PLUGIN_DIR/zsh-autosuggestions" ]; then
-  echo "Installing zsh-autosuggestions..."
-  git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_PLUGIN_DIR/zsh-autosuggestions"
-else
-  echo "zsh-autosuggestions already installed, skipping..."
-fi
+clone_plugin() {
+  local name="$1" url="$2"
+  if [ ! -d "$ZSH_PLUGIN_DIR/$name" ]; then
+    echo "Installing $name..."
+    git clone --depth 1 "$url" "$ZSH_PLUGIN_DIR/$name"
+  else
+    echo "$name already installed, skipping..."
+  fi
+}
 
-# Check if zsh-syntax-highlighting is already installed
-if [ ! -d "$ZSH_PLUGIN_DIR/zsh-syntax-highlighting" ]; then
-  echo "Installing zsh-syntax-highlighting..."
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_PLUGIN_DIR/zsh-syntax-highlighting"
-else
-  echo "zsh-syntax-highlighting already installed, skipping..."
-fi
-
-# Check if zsh-hangul is already installed
-if [ ! -d "$ZSH_PLUGIN_DIR/zsh-hangul" ]; then
-  echo "Installing zsh-hangul..."
-  git clone https://github.com/gomjellie/zsh-hangul.git "$ZSH_PLUGIN_DIR/zsh-hangul"
-else
-  echo "zsh-hangul already installed, skipping..."
-fi
+clone_plugin zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions
+clone_plugin zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting.git
+clone_plugin zsh-hangul https://github.com/gomjellie/zsh-hangul.git
 
 # Download config files
 echo "Downloading configuration files..."
-BASE_URL="https://raw.githubusercontent.com/woohm402/settings/main/settings"
 
-# Create directories if they don't exist
-mkdir -p ~/.config/zed/snippets
-
-# Download and update config files
 echo "Updating zed configs..."
-curl -fsSL "$BASE_URL/zed/settings.json" > ~/.config/zed/settings.json
-curl -fsSL "$BASE_URL/zed/keymap.json" > ~/.config/zed/keymap.json
-curl -fsSL "$BASE_URL/zed/snippets/tsx.json" > ~/.config/zed/snippets/tsx.json
+download "$BASE_URL/zed/settings.json" "$HOME/.config/zed/settings.json"
+download "$BASE_URL/zed/keymap.json" "$HOME/.config/zed/keymap.json"
+download "$BASE_URL/zed/snippets/tsx.json" "$HOME/.config/zed/snippets/tsx.json"
 
 echo "Updating zshrc..."
-curl -fsSL "$BASE_URL/zsh/.zshrc" > ~/.zshrc
+download "$BASE_URL/zsh/.zshrc" "$HOME/.zshrc"
 
+# Rectangle은 실행 중이면 설정 파일을 읽지 않는다. 종료 -> 배치 -> 재실행.
 echo "Updating rectangle config..."
-mkdir -p ~/Library/Application\ Support/Rectangle
-curl -fsSL "$BASE_URL/rectangle/RectangleConfig.json" > ~/Library/Application\ Support/Rectangle/RectangleConfig.json
+RECTANGLE_WAS_RUNNING=0
+if pgrep -xq Rectangle; then
+  RECTANGLE_WAS_RUNNING=1
+  osascript -e 'quit app "Rectangle"' 2>/dev/null || true
+fi
+download "$BASE_URL/rectangle/RectangleConfig.json" "$HOME/Library/Application Support/Rectangle/RectangleConfig.json"
+if [ "$RECTANGLE_WAS_RUNNING" -eq 1 ]; then
+  open -a Rectangle 2>/dev/null || true
+fi
 
-echo "Updating cmux config..."
-mkdir -p ~/Library/Application\ Support/com.mitchellh.ghostty
-curl -fsSL "$BASE_URL/cmux/config.ghostty" > ~/Library/Application\ Support/com.mitchellh.ghostty/config.ghostty
+# macOS 시스템 설정
+echo "Applying macOS defaults..."
+MACOS_SCRIPT="$(mktemp)"
+if curl -fsSL "$REPO_BASE/scripts/macos.sh" -o "$MACOS_SCRIPT"; then
+  bash "$MACOS_SCRIPT"
+else
+  echo "  ⚠️  macos.sh download failed, skipping"
+  FAILURES=$((FAILURES + 1))
+fi
+rm -f "$MACOS_SCRIPT"
+
+if [ "$FAILURES" -gt 0 ]; then
+  echo "⚠️  Setup finished with $FAILURES failure(s) — see warnings above."
+  exit 1
+fi
 
 echo "✅ Setup complete! Run 'source ~/.zshrc' to apply changes or restart your terminal."
+echo "   수동 설치 필요: Orca (https://github.com/stablyai/orca/releases)"

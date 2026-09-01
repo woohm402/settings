@@ -10,8 +10,8 @@ This is a dotfiles repository that serves as a Single Source of Truth (SSOT) for
 
 ```
 settings/
-├── cmux/          # cmux terminal multiplexer configuration (Ghostty config format)
-│   └── config.ghostty
+├── homebrew/      # Brewfile - CLI tools, GUI apps, fonts
+│   └── Brewfile
 ├── rectangle/     # Rectangle window manager configuration
 │   └── RectangleConfig.json
 ├── zed/           # Zed editor configuration
@@ -22,7 +22,7 @@ settings/
 └── zsh/           # Zsh shell configuration
     └── .zshrc
 scripts/
-└── init.sh        # Setup script that installs tools and downloads configs
+└── init.sh        # Setup script: installs tools, downloads configs, applies macOS defaults
 ```
 
 ## Key Behaviors
@@ -33,33 +33,56 @@ scripts/
 - The `ghpr` function opens a browser to create a PR for the current branch
 
 ### Setup Script (`scripts/init.sh`)
-The init script is designed to be **idempotent** - it checks if tools are already installed before attempting installation. When modifying:
-- Always preserve this idempotent behavior (check before install)
-- Downloads config files from `https://raw.githubusercontent.com/woohm402/settings/main/settings/`
-- Creates necessary directories before downloading configs
-- Installed tools: Oh My Zsh, Google Cloud SDK, Rust, NVM, Bun, uv, cargo-binstall, zellij
+The init script is **idempotent** and **fail-safe**. When modifying:
+- Always preserve the idempotent behavior (check before install)
+- Always download config files through the `download()` helper — it writes to a temp
+  file and only replaces the destination on success, backing up the previous version
+  to `.bak`. Never use `curl ... > ~/.file`: the redirect truncates the target before
+  curl runs, so a network failure destroys the existing config.
+- Keep `set -euo pipefail` at the top; report download failures via `FAILURES` and
+  exit non-zero at the end rather than dying mid-way
+- Homebrew must be installed first — brew packages and `brew shellenv` depend on it
+- Directly installed (not via brew): Oh My Zsh, Google Cloud SDK, Rust, NVM, Bun, uv, cargo-binstall
+- Installed via `brew bundle`: see `settings/homebrew/Brewfile`
 - Installed zsh plugins: zsh-autosuggestions, zsh-syntax-highlighting, zsh-hangul
 
 ### Configuration File Paths
 When updating the init script, ensure config files are downloaded to:
-- cmux: `~/Library/Application Support/com.mitchellh.ghostty/config.ghostty`
-- Rectangle: `~/Library/Application Support/Rectangle/` (auto-loaded on launch, file is renamed after loading)
 - Zed: `~/.config/zed/`
 - Zsh: `~/.zshrc`
+- Rectangle: `~/Library/Application Support/Rectangle/` (loaded on launch, file is renamed after loading — the script quits and relaunches Rectangle if it was running)
 
-### cmux Configuration
-- Uses Ghostty config format (`config.ghostty`)
-- Font: Monaspace Krypton (matching Zed), Korean fallback: Sarasa Term K
-- Font style: Bold
+### Program Inventory
+The tool set is declared in two places and they must stay in sync:
+- `settings/homebrew/Brewfile` — what gets installed
+- `README.md` — the human-readable list, including manually installed programs
+
+Programs that are no longer used should be removed from the Brewfile, the README, and
+their config directory under `settings/` in the same change.
+
+### Terminal
+No dedicated terminal emulator is configured. The Zed built-in terminal and the stock
+macOS Terminal.app are used as-is; Terminal.app has no customized preference domain,
+so there is nothing to track for it.
 
 ### Zed Editor Configuration
 - Uses TypeScript language servers: `tsgo` and `vtsls`
 - Biome requires config file (`require_config_file: true`)
 - Import preferences: non-relative imports for TypeScript
 - Code actions on format: ESLint auto-fix enabled
-- Font: Monaspace Krypton
+- Font: Monaspace Krypton (installed via the `font-monaspace` cask)
+
+### macOS Defaults
+The `defaults write` calls live inline at the end of `scripts/init.sh`, not in a separate
+script. `init.sh` is run via `curl | bash`, so a separate file would mean another network
+fetch that can fail independently — keep them inline.
+
+Only settings that are actually deviated from macOS defaults belong here. Do not add
+`defaults write` calls for values that are already the system default — read the current
+value with `defaults read` before adding anything.
 
 ## Maintenance Notes
 
-- When adding new tool installations to `init.sh`, follow the existing pattern of checking if the tool exists first
-- When adding new config files, update both the `settings/` directory and the download section in `init.sh`
+- New brew-installable tools go in the Brewfile, not in `init.sh`
+- Non-brew installers in `init.sh` follow the existing pattern of checking if the tool exists first
+- When adding a new config file, update both the `settings/` directory and the download section in `init.sh`

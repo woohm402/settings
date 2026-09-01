@@ -1,0 +1,18 @@
+# Homebrew SSOT. `brew bundle --file Brewfile`
+#
+# 여기 없는 프로그램은 수동 설치:
+# - Orca (https://github.com/stablyai/orca/releases) — homebrew cask 없음
+
+# CLI
+brew "gh"
+brew "ffmpeg"
+brew "poppler"
+
+# GUI
+cask "zed"
+cask "rectangle"
+cask "orbstack"
+cask "arc"
+
+# Fonts (zed 설정이 참조)
+cask "font-monaspace"

@@ -36,7 +36,7 @@ else
 fi
 
 # nvm
-if [ ! -d "$HOME/.nvm" ]; then
+if [ ! -s "$HOME/.nvm/nvm.sh" ]; then
   echo "Installing NVM..."
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
 else

@@ -1,6 +1,15 @@
 #!/bin/bash
 echo "Starting setup..."
 
+# homebrew
+if ! command -v brew &> /dev/null && [ ! -x /opt/homebrew/bin/brew ]; then
+  echo "Installing Homebrew..."
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  echo "Homebrew already installed, skipping..."
+fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Install Oh My Zsh if not present
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "Installing Oh My Zsh..."
@@ -50,20 +59,44 @@ else
   echo "uv already installed, skipping..."
 fi
 
-# cargo-binstall
-if ! command -v cargo-binstall &> /dev/null; then
-  echo "Installing cargo-binstall..."
-  curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+# gh
+if ! command -v gh &> /dev/null; then
+  echo "Installing GitHub CLI..."
+  brew install gh
 else
-  echo "cargo-binstall already installed, skipping..."
+  echo "GitHub CLI already installed, skipping..."
 fi
 
-# zellij
-if ! command -v zellij &> /dev/null; then
-  echo "Installing zellij..."
-  cargo binstall zellij -y
+# claude code
+if ! command -v claude &> /dev/null; then
+  echo "Installing Claude Code..."
+  curl -fsSL https://claude.ai/install.sh | bash
 else
-  echo "zellij already installed, skipping..."
+  echo "Claude Code already installed, skipping..."
+fi
+
+# codex
+if ! command -v codex &> /dev/null; then
+  echo "Installing Codex CLI..."
+  brew install --cask codex
+else
+  echo "Codex CLI already installed, skipping..."
+fi
+
+# zed
+if [ ! -d "/Applications/Zed.app" ]; then
+  echo "Installing Zed..."
+  brew install --cask zed
+else
+  echo "Zed already installed, skipping..."
+fi
+
+# orca
+if [ ! -d "/Applications/Orca.app" ]; then
+  echo "Installing Orca..."
+  brew install --cask stablyai/orca/orca
+else
+  echo "Orca already installed, skipping..."
 fi
 
 # zsh plugins
@@ -113,9 +146,5 @@ curl -fsSL "$BASE_URL/zsh/.zshrc" > ~/.zshrc
 echo "Updating rectangle config..."
 mkdir -p ~/Library/Application\ Support/Rectangle
 curl -fsSL "$BASE_URL/rectangle/RectangleConfig.json" > ~/Library/Application\ Support/Rectangle/RectangleConfig.json
-
-echo "Updating cmux config..."
-mkdir -p ~/Library/Application\ Support/com.mitchellh.ghostty
-curl -fsSL "$BASE_URL/cmux/config.ghostty" > ~/Library/Application\ Support/com.mitchellh.ghostty/config.ghostty
 
 echo "✅ Setup complete! Run 'source ~/.zshrc' to apply changes or restart your terminal."

@@ -21,7 +21,6 @@ alias manslack="open https://slack.com/intl/ko-kr/help/articles/201374536-Slack-
 alias manvim="open https://vim.rtorr.com/"
 alias manzshgit="open https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/README.md"
 
-alias zad="zellij attach default"
 
 # Languages
 export PATH="/usr/local/opt/openjdk/bin:$PATH"

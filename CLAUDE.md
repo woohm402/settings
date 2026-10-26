@@ -10,8 +10,6 @@ This is a dotfiles repository that serves as a Single Source of Truth (SSOT) for
 
 ```
 settings/
-├── cmux/          # cmux terminal multiplexer configuration (Ghostty config format)
-│   └── config.ghostty
 ├── rectangle/     # Rectangle window manager configuration
 │   └── RectangleConfig.json
 ├── zed/           # Zed editor configuration
@@ -37,20 +35,14 @@ The init script is designed to be **idempotent** - it checks if tools are alread
 - Always preserve this idempotent behavior (check before install)
 - Downloads config files from `https://raw.githubusercontent.com/woohm402/settings/main/settings/`
 - Creates necessary directories before downloading configs
-- Installed tools: Oh My Zsh, Google Cloud SDK, Rust, NVM, Bun, uv, cargo-binstall, zellij
+- Installed tools: Homebrew, Oh My Zsh, Google Cloud SDK, Rust, NVM, Bun, uv, gh, Claude Code, Codex CLI, Zed, Orca
 - Installed zsh plugins: zsh-autosuggestions, zsh-syntax-highlighting, zsh-hangul
 
 ### Configuration File Paths
 When updating the init script, ensure config files are downloaded to:
-- cmux: `~/Library/Application Support/com.mitchellh.ghostty/config.ghostty`
 - Rectangle: `~/Library/Application Support/Rectangle/` (auto-loaded on launch, file is renamed after loading)
 - Zed: `~/.config/zed/`
 - Zsh: `~/.zshrc`
-
-### cmux Configuration
-- Uses Ghostty config format (`config.ghostty`)
-- Font: Monaspace Krypton (matching Zed), Korean fallback: Sarasa Term K
-- Font style: Bold
 
 ### Zed Editor Configuration
 - Uses TypeScript language servers: `tsgo` and `vtsls`
@@ -62,4 +54,5 @@ When updating the init script, ensure config files are downloaded to:
 ## Maintenance Notes
 
 - When adding new tool installations to `init.sh`, follow the existing pattern of checking if the tool exists first
+- For cask apps, check the `.app` in `/Applications` rather than `command -v` (cask install fails if the app was installed manually)
 - When adding new config files, update both the `settings/` directory and the download section in `init.sh`

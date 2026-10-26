@@ -35,7 +35,7 @@ The init script is designed to be **idempotent** - it checks if tools are alread
 - Always preserve this idempotent behavior (check before install)
 - Downloads config files from `https://raw.githubusercontent.com/woohm402/settings/main/settings/`
 - Creates necessary directories before downloading configs
-- Installed tools: Homebrew, Oh My Zsh, Google Cloud SDK, Rust, NVM, Bun, uv, gh, Claude Code, Codex CLI, Zed
+- Installed tools: Homebrew, Oh My Zsh, Google Cloud SDK, Rust, NVM, Bun, uv, gh, Claude Code, Codex CLI, Zed, Orca
 - Installed zsh plugins: zsh-autosuggestions, zsh-syntax-highlighting, zsh-hangul
 
 ### Configuration File Paths

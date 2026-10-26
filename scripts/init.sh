@@ -91,6 +91,14 @@ else
   echo "Zed already installed, skipping..."
 fi
 
+# orca
+if [ ! -d "/Applications/Orca.app" ]; then
+  echo "Installing Orca..."
+  brew install --cask stablyai/orca/orca
+else
+  echo "Orca already installed, skipping..."
+fi
+
 # zsh plugins
 echo "Setting up zsh plugins..."
 ZSH_PLUGIN_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins"

@@ -39,7 +39,8 @@
     }
   },
   "project_panel": {
-    "folder_icons": false,
+    "dock": "left",
+    "folder_indicator": "chevron",
     "auto_fold_dirs": false
   },
   "languages": {

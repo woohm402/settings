@@ -99,6 +99,14 @@ else
   echo "Orca already installed, skipping..."
 fi
 
+# monaspace font
+if ! ls "$HOME/Library/Fonts"/Monaspace* &> /dev/null && ! ls /Library/Fonts/Monaspace* &> /dev/null; then
+  echo "Installing Monaspace font..."
+  brew install --cask font-monaspace
+else
+  echo "Monaspace font already installed, skipping..."
+fi
+
 # zsh plugins
 echo "Setting up zsh plugins..."
 ZSH_PLUGIN_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins"
